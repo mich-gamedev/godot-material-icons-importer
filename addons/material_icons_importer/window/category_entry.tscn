@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://0tkmxun2auvn"]
+
+[ext_resource type="Script" uid="uid://cpffujb3a2cxf" path="res://addons/material_icons_importer/window/entry_vbox.gd" id="1_6jm2r"]
+
+[node name="FoldableContainer" type="FoldableContainer"]
+self_modulate = Color(1, 1, 1, 0.5)
+offset_right = 20.0
+offset_bottom = 28.0
+size_flags_horizontal = 3
+folded = true
+title = "Test"
+
+[node name="EntryVBox" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("1_6jm2r")
+
+[node name="NoteLabel" type="Label" parent="EntryVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Loading..."
+
+[node name="IconRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+
+[connection signal="folding_changed" from="." to="EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="request_completed" from="IconRequest" to="EntryVBox" method="_on_icon_request_request_completed"]

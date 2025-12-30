@@ -1,0 +1,218 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8gyhxdgrbfvr"]
+
+[ext_resource type="Texture2D" uid="uid://b8pabek48iunu" path="res://addons/material_icons_importer/icons/arrow_down.svg" id="1_hybm4"]
+[ext_resource type="Texture2D" uid="uid://s0xvb5fwo3ih" path="res://addons/material_icons_importer/icons/search.svg" id="1_tvcg7"]
+[ext_resource type="Script" uid="uid://biu7ujfl17kfo" path="res://addons/material_icons_importer/window/window.gd" id="1_usdtt"]
+
+[node name="Window" type="Window"]
+oversampling_override = 1.0
+title = "Material Icon Importer"
+initial_position = 2
+size = Vector2i(640, 360)
+script = ExtResource("1_usdtt")
+
+[node name="Control" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplit" type="HSplitContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 480
+
+[node name="Icons" type="Panel" parent="Control/HSplit"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HSplit/Icons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/HSplit/Icons/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExpandAll" type="Button" parent="Control/HSplit/Icons/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Expand All"
+
+[node name="Search" type="LineEdit" parent="Control/HSplit/Icons/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Find loaded icons by name..."
+right_icon = ExtResource("1_tvcg7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/HSplit/Icons/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CategoryContainer" type="VBoxContainer" parent="Control/HSplit/Icons/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/HSplit/Icons/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ImportSelected" type="Button" parent="Control/HSplit/Icons/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Import Selected (8)"
+icon = ExtResource("1_hybm4")
+
+[node name="Deselect" type="Button" parent="Control/HSplit/Icons/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Deselect All"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Control/HSplit"]
+layout_mode = 2
+split_offset = 185
+
+[node name="Settings" type="Panel" parent="Control/HSplit/VSplitContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/HSplit/VSplitContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Type"
+
+[node name="TypeOption" type="OptionButton" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+fit_to_longest_item = false
+item_count = 5
+popup/item_0/text = "Filled"
+popup/item_0/id = 0
+popup/item_1/text = "Outlined"
+popup/item_1/id = 1
+popup/item_2/text = "Filled (Round)"
+popup/item_2/id = 2
+popup/item_3/text = "Filled (Sharp)"
+popup/item_3/id = 3
+popup/item_4/text = "Two-tone"
+popup/item_4/id = 4
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer/HFlowContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution"
+
+[node name="ResOption" type="OptionButton" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer/HFlowContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 3
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "18dp"
+popup/item_0/id = 18
+popup/item_1/text = "24dp"
+popup/item_1/id = 24
+popup/item_2/text = "36dp"
+popup/item_2/id = 36
+popup/item_3/text = "48dp"
+popup/item_3/id = 48
+
+[node name="HFlowContainer3" type="HFlowContainer" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer/HFlowContainer3"]
+layout_mode = 2
+text = "×2 size"
+
+[node name="DoubleRes" type="CheckBox" parent="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer/HFlowContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+button_pressed = true
+
+[node name="Panel" type="Panel" parent="Control/HSplit/VSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HSplit/VSplitContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/HSplit/VSplitContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Selected"
+
+[node name="HSeparator" type="HSeparator" parent="Control/HSplit/VSplitContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SelectedContainer" type="HFlowContainer" parent="Control/HSplit/VSplitContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CategoryRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+use_threads = true
+timeout = 5.0
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="Control/HSplit/Icons/VBoxContainer/HBoxContainer2/ExpandAll" to="." method="_on_expand_all_pressed"]
+[connection signal="text_submitted" from="Control/HSplit/Icons/VBoxContainer/HBoxContainer2/Search" to="." method="_on_search_text_submitted"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/action" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/action/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/alert" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/alert/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/av" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/av/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/communication" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/communication/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/content" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/content/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/device" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/device/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/editor" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/editor/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/file" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/file/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/hardware" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/hardware/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/home" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/home/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/image" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/image/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/maps" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/maps/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/navigation" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/navigation/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/notification" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/notification/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/places" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/places/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/search" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/search/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/social" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/social/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="folding_changed" from="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/toggle" to="Control/HSplit/Icons/VBoxContainer/ScrollContainer/CategoryContainer/toggle/EntryVBox" method="_on_foldable_container_folding_changed"]
+[connection signal="pressed" from="Control/HSplit/Icons/VBoxContainer/HBoxContainer/ImportSelected" to="." method="_on_import_selected_pressed"]
+[connection signal="pressed" from="Control/HSplit/Icons/VBoxContainer/HBoxContainer/Deselect" to="." method="_on_deselect_pressed"]
+[connection signal="item_selected" from="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer/HFlowContainer/TypeOption" to="." method="_on_type_option_item_selected"]
+[connection signal="item_selected" from="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer/HFlowContainer2/ResOption" to="." method="_on_res_option_item_selected"]
+[connection signal="toggled" from="Control/HSplit/VSplitContainer/Settings/ScrollContainer/VBoxContainer/HFlowContainer3/DoubleRes" to="." method="_on_double_res_toggled"]

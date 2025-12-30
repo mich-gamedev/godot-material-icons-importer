@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2qwc467g6xlt"]
+
+[ext_resource type="Script" uid="uid://6qdvlhlguahn" path="res://addons/material_icons_importer/window/icon_entry.gd" id="1_paj4g"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3s100"]
+size = Vector2(48, 48)
+
+[node name="HBoxContainer" type="HBoxContainer"]
+script = ExtResource("1_paj4g")
+
+[node name="ImportCheckbox" type="CheckBox" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "123"
+autowrap_mode = 3
+
+[node name="PreviewButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+text = "Preview"
+
+[node name="IconPreview" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_3s100")
+expand_mode = 2
+
+[node name="IconRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="toggled" from="ImportCheckbox" to="." method="_on_import_checkbox_toggled"]
+[connection signal="pressed" from="PreviewButton" to="." method="preview"]
+[connection signal="request_completed" from="IconRequest" to="." method="_request_completed"]

@@ -1,0 +1,31 @@
+[
+	{
+		"name": "plugin/material_icon_importer/github/api_token",
+		"type": 4,
+		"default": ""
+	},
+	{
+		"name": "plugin/material_icon_importer/defaults/mode",
+		"type": 2,
+		"hint": 2,
+		"hint_string": "Filled,Outlined,Filled (Round),Filled (Sharp), Two-tone",
+		"default" : 0
+	},
+	{
+		"name": "plugin/material_icon_importer/defaults/resolution",
+		"type": 2,
+		"hint": 2,
+		"hint_string": "18dp:18,24dp:24,36dp:36,48dp:48",
+		"default": 48
+	},
+	{
+		"name": "plugin/material_icon_importer/defaults/double_resolution",
+		"type": 1,
+		"default": true
+	},
+	{
+		"name": "plugin/material_icon_importer/loading/automatically_preview_icons",
+		"type": 1,
+		"default": true
+	}
+]
