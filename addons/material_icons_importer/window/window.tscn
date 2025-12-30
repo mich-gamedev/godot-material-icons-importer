@@ -70,7 +70,7 @@ alignment = 1
 [node name="ImportSelected" type="Button" parent="Control/HSplit/Icons/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Import Selected (8)"
+text = "Import Selected (0)"
 icon = ExtResource("1_hybm4")
 
 [node name="Deselect" type="Button" parent="Control/HSplit/Icons/VBoxContainer/HBoxContainer"]
